@@ -1,0 +1,70 @@
+font:
+  # The normal (roman) font face to use.
+  normal:
+    family: "JetbrainsMono Nerd Font"
+    # family: "Jetbrains Mono"
+    # Style can be specified to pick a specific face.
+    style: Regular
+
+  # OS X only: use thin stroke font rendering. Thin strokes are suitable
+  # for retina displays, but for non-retina you probably want this set to
+  # false.
+  use_thin_strokes: true
+  size: 16
+
+
+# Default
+colors:
+  primary:
+    background: '0x2e3436'
+    foreground: '0xd3d7cf'
+  normal:
+    black: '0x2e3436'
+    red: '0xcc0000'
+    green: '0x4e9a06'
+    yellow: '0xc4a000'
+    blue: '0x3465a4'
+    magenta: '0x75507b'
+    cyan: '0x06989a'
+    white: '0xd3d7cf'
+  bright:
+    black: '0x555753'
+    red: '0xef2929'
+    green: '0x8ae234'
+    yellow: '0xfce94f'
+    blue: '0x729fcf'
+    magenta: '0xad7fa8'
+    cyan: '0x34e2e2'
+    white: '0xeeeeec'
+
+
+# Colors (Pencil Light)
+# colors:
+#   # Default Colors
+#   primary:
+#     background: '0xf1f1f1'
+#     foreground: '0x424242'
+#   # Normal colors
+#   normal:
+#     black:   '0x212121'
+#     red:     '0xc30771'
+#     green:   '0x10a778'
+#     yellow:  '0xa89c14'
+#     blue:    '0x008ec4'
+#     magenta: '0x523c79'
+#     cyan:    '0x20a5ba'
+#     white:   '0xe0e0e0'
+#   # Bright colors
+#   bright:
+#     black:   '0x212121'
+#     red:     '0xfb007a'
+#     green:   '0x5fd7af'
+#     yellow:  '0xf3e430'
+#     blue:    '0x20bbfc'
+#     magenta: '0x6855de'
+#     cyan:    '0x4fb8cc'
+#     white:   '0xf1f1f1'
+shell:
+  program: /bin/bash
+  args:
+    - --login
