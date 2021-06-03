@@ -2,25 +2,22 @@
 
 set -o vi
 
-. ~/.dotfiles/bash/.env
+# . ~/.dotfiles/bash/.env
 
-. ~/.dotfiles/bash/.prompt
+# . ~/.dotfiles/bash/.prompt
 
-. ~/.dotfiles/bash/.alias
+# . ~/.dotfiles/bash/.alias
 
-. ~/.dotfiles/bash/.functions
+# . ~/.dotfiles/bash/.functions
 
-. ~/.dotfiles/bash/.path
+# . ~/.dotfiles/bash/.path
 
-. ~/.dotfiles/bash/libs/z/z.sh
+# . ~/.dotfiles/bash/libs/z/z.sh
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 [ -f ~/.local/bin/bashmarks.sh ] && source ~/.local/bin/bashmarks.sh
 
-# if [ -f ~/.bashrc ]; then
-#     . ~/.bashrc
-# fi
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
@@ -41,8 +38,13 @@ fi
 
 [[ -r /usr/local/etc/profile.d/bash_completion.sh ]] && . /usr/local/etc/profile.d/bash_completion.sh
 
+# for bare repo (dotfiles)
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
+# for aliases
 if [ -e $HOME/.bash_aliases ]; then
     source $HOME/.bash_aliases
 fi
+
+#launch neofetch with terminal
+neofetch

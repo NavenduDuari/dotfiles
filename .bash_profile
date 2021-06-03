@@ -15,3 +15,7 @@ export PS1="\w\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
+
+if [ -f ~/.bashrc ]; then
+   source ~/.bashrc
+fi
