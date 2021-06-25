@@ -147,6 +147,7 @@ Plug 'overcache/NeoSolarized'
 Plug 'lifepillar/vim-solarized8'
 Plug 'lifepillar/vim-gruvbox8'
 Plug 'cormacrelf/vim-colors-github'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 Plug 'Yggdroot/indentLine'
 
@@ -319,19 +320,19 @@ onoremap <silent> al :<c-u>normal! $v0<cr>
 " AutoGroups {{{
 " file type specific settings
 augroup configgroup
-  autocmd!
+autocmd!
 
-  " automatically resize panes on resize
-  autocmd VimResized * exe 'normal! \<c-w>='
-  autocmd BufWritePost .vimrc,.vimrc.local,init.vim source %
-  autocmd BufWritePost .vimrc.local source %
-  " save all files on focus lost, ignoring warnings about untitled buffers
-  autocmd FocusLost * silent! wa
+" automatically resize panes on resize
+autocmd VimResized * exe 'normal! \<c-w>='
+autocmd BufWritePost .vimrc,.vimrc.local,init.vim source %
+autocmd BufWritePost .vimrc.local source %
+" save all files on focus lost, ignoring warnings about untitled buffers
+autocmd FocusLost * silent! wa
 
-  " make quickfix windows take all the lower section of the screen
-  " when there are multiple windows open
-  autocmd FileType qf wincmd J
-  autocmd FileType qf nmap <buffer> q :q<cr>
+" make quickfix windows take all the lower section of the screen
+" when there are multiple windows open
+autocmd FileType qf wincmd J
+autocmd FileType qf nmap <buffer> q :q<cr>
 augroup END
 " }}}
 
@@ -374,41 +375,41 @@ Plug 'liuchengxu/vista.vim'
 
 " {{{ Vista setup
 
-    let g:vista_sidebar_width = 50
+  let g:vista_sidebar_width = 50
 
-    " Executive used when opening vista sidebar without specifying it.
-    " See all the avaliable executives via `:echo g:vista#executives`.
-    let g:vista_default_executive = 'coc'
+  " Executive used when opening vista sidebar without specifying it.
+  " See all the avaliable executives via `:echo g:vista#executives`.
+  let g:vista_default_executive = 'coc'
 
-    " Ensure you have installed some decent font to show these pretty symbols, then you can enable icon for the kind.
-    let g:vista#renderer#enable_icon = 1
+  " Ensure you have installed some decent font to show these pretty symbols, then you can enable icon for the kind.
+  let g:vista#renderer#enable_icon = 1
 
-    let g:vista#renderer#ctags = "kind"
+  let g:vista#renderer#ctags = "kind"
 
-    " To enable fzf's preview window set g:vista_fzf_preview.
-    " The elements of g:vista_fzf_preview will be passed as arguments to fzf#vim#with_preview()
-    " For example:
-    let g:vista_fzf_preview = ['right:50%']
+  " To enable fzf's preview window set g:vista_fzf_preview.
+  " The elements of g:vista_fzf_preview will be passed as arguments to fzf#vim#with_preview()
+  " For example:
+  let g:vista_fzf_preview = ['right:50%']
 
 " }}}
 
 let g:tagbar_type_typescript = {
-  \ 'ctagsbin' : 'tstags',
-  \ 'ctagsargs' : '-f-',
-  \ 'kinds': [
-    \ 'e:enums:0:1',
-    \ 'f:function:0:1',
-    \ 't:typealias:0:1',
-    \ 'M:Module:0:1',
-    \ 'I:import:0:1',
-    \ 'i:interface:0:1',
-    \ 'C:class:0:1',
-    \ 'm:method:0:1',
-    \ 'p:property:0:1',
-    \ 'v:variable:0:1',
-    \ 'c:const:0:1',
-  \ ],
-  \ 'sort' : 0
+\ 'ctagsbin' : 'tstags',
+\ 'ctagsargs' : '-f-',
+\ 'kinds': [
+  \ 'e:enums:0:1',
+  \ 'f:function:0:1',
+  \ 't:typealias:0:1',
+  \ 'M:Module:0:1',
+  \ 'I:import:0:1',
+  \ 'i:interface:0:1',
+  \ 'C:class:0:1',
+  \ 'm:method:0:1',
+  \ 'p:property:0:1',
+  \ 'v:variable:0:1',
+  \ 'c:const:0:1',
+\ ],
+\ 'sort' : 0
 \ }
 
 " .editorconfig support
@@ -424,37 +425,37 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-sleuth'
 
 " Startify: Fancy startup screen for vim {{{
-  Plug 'mhinz/vim-startify'
+Plug 'mhinz/vim-startify'
 
-  " Don't change to directory when selecting a file
-  let g:startify_files_number = 5
-  let g:startify_change_to_dir = 0
-  let g:startify_custom_header = [ ]
-  let g:startify_relative_path = 1
-  let g:startify_use_env = 1
+" Don't change to directory when selecting a file
+let g:startify_files_number = 5
+let g:startify_change_to_dir = 0
+let g:startify_custom_header = [ ]
+let g:startify_relative_path = 1
+let g:startify_use_env = 1
 
-  " Custom startup list, only show MRU from current directory/project
-  let g:startify_lists = [
-  \  { 'type': 'dir',       'header': [ 'Files '. getcwd() ] },
-  \  { 'type': function('helpers#startify#listcommits'), 'header': [ 'Recent Commits' ] },
-  \  { 'type': 'sessions',  'header': [ 'Sessions' ]       },
-  \  { 'type': 'bookmarks', 'header': [ 'Bookmarks' ]      },
-  \  { 'type': 'commands',  'header': [ 'Commands' ]       },
-  \ ]
+" Custom startup list, only show MRU from current directory/project
+let g:startify_lists = [
+\  { 'type': 'dir',       'header': [ 'Files '. getcwd() ] },
+\  { 'type': function('helpers#startify#listcommits'), 'header': [ 'Recent Commits' ] },
+\  { 'type': 'sessions',  'header': [ 'Sessions' ]       },
+\  { 'type': 'bookmarks', 'header': [ 'Bookmarks' ]      },
+\  { 'type': 'commands',  'header': [ 'Commands' ]       },
+\ ]
 
-  let g:startify_commands = [
-  \   { 'up': [ 'Update Plugins', ':PlugUpdate' ] },
-  \   { 'ug': [ 'Upgrade Plugin Manager', ':PlugUpgrade' ] },
-  \ ]
+let g:startify_commands = [
+\   { 'up': [ 'Update Plugins', ':PlugUpdate' ] },
+\   { 'ug': [ 'Upgrade Plugin Manager', ':PlugUpgrade' ] },
+\ ]
 
-  let g:startify_bookmarks = [
-      \ { 'c': '~/.config/nvim/init.vim' },
-      \ { 'g': '~/.gitconfig' },
-      \ { 'z': '~/.bash_profile' }
-  \ ]
+let g:startify_bookmarks = [
+    \ { 'c': '~/.config/nvim/init.vim' },
+    \ { 'g': '~/.gitconfig' },
+    \ { 'z': '~/.bash_profile' }
+\ ]
 
-  autocmd User Startified setlocal cursorline
-  nmap <leader>st :Startify<cr>
+autocmd User Startified setlocal cursorline
+nmap <leader>st :Startify<cr>
 " }}}
 
 " Close buffers but keep splits
@@ -462,179 +463,181 @@ Plug 'moll/vim-bbye'
 nmap <leader>d :Bdelete<cr>
 
 " Writing in vim {{{{
-    Plug 'junegunn/goyo.vim'
+  Plug 'junegunn/goyo.vim'
 
-    let g:goyo_height = '100%'
-    let g:goyo_width = 122
+  let g:goyo_height = '100%'
+  let g:goyo_width = 122
 
-    autocmd! User GoyoEnter nested call helpers#goyo#enter()
-    autocmd! User GoyoLeave nested call helpers#goyo#leave()
+  autocmd! User GoyoEnter nested call helpers#goyo#enter()
+  autocmd! User GoyoLeave nested call helpers#goyo#leave()
 
-    nmap <silent> <leader>z :Goyo<cr>
+  nmap <silent> <leader>z :Goyo<cr>
 " }}}
 
 " context-aware pasting
 Plug 'sickill/vim-pasta'
 
 " NERDTree {{{
-    " Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
-    " Plug 'Xuyuanp/nerdtree-git-plugin'
-    " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-    " let g:WebDevIconsOS = 'Darwin'
-    " let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-    " let g:DevIconsEnableFoldersOpenClose = 1
-    " let g:DevIconsEnableFolderExtensionPatternMatching = 1
-    " let NERDTreeDirArrowExpandable = "\u00a0" " make arrows invisible
-    " let NERDTreeDirArrowCollapsible = "\u00a0" " make arrows invisible
-    " let NERDTreeNodeDelimiter = "\u263a" " smiley face
+  " Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+  " Plug 'Xuyuanp/nerdtree-git-plugin'
+  " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+  " let g:WebDevIconsOS = 'Darwin'
+  " let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+  " let g:DevIconsEnableFoldersOpenClose = 1
+  " let g:DevIconsEnableFolderExtensionPatternMatching = 1
+  " let NERDTreeDirArrowExpandable = "\u00a0" " make arrows invisible
+  " let NERDTreeDirArrowCollapsible = "\u00a0" " make arrows invisible
+  " let NERDTreeNodeDelimiter = "\u263a" " smiley face
 
-    " augroup nerdtree
-    "     autocmd!
-    "     autocmd FileType nerdtree setlocal nolist " turn off whitespace characters
-    "     autocmd FileType nerdtree setlocal nocursorline " turn off line highlighting for performance
-    " augroup END
+  " augroup nerdtree
+  "     autocmd!
+  "     autocmd FileType nerdtree setlocal nolist " turn off whitespace characters
+  "     autocmd FileType nerdtree setlocal nocursorline " turn off line highlighting for performance
+  " augroup END
 
-    " " Toggle NERDTree
-    " function! ToggleNerdTree()
-    "     if @% != "" && @% !~ "Startify" && (!exists("g:NERDTree") || (g:NERDTree.ExistsForTab() && !g:NERDTree.IsOpen()))
-    "         :NERDTreeFind
-    "     else
-    "         :NERDTreeToggle
-    "     endif
-    " endfunction
-    " " toggle nerd tree
-    " nmap <silent> <leader>n :call ToggleNerdTree()<cr>
-    " " find the current file in nerdtree without needing to reload the drawer
-    " nmap <silent> <leader>y :NERDTreeFind<cr>
+  " " Toggle NERDTree
+  " function! ToggleNerdTree()
+  "     if @% != "" && @% !~ "Startify" && (!exists("g:NERDTree") || (g:NERDTree.ExistsForTab() && !g:NERDTree.IsOpen()))
+  "         :NERDTreeFind
+  "     else
+  "         :NERDTreeToggle
+  "     endif
+  " endfunction
+  " " toggle nerd tree
+  " nmap <silent> <leader>n :call ToggleNerdTree()<cr>
+  " " find the current file in nerdtree without needing to reload the drawer
+  " nmap <silent> <leader>y :NERDTreeFind<cr>
 
-    " let NERDTreeShowHidden=1
-    " " let NERDTreeDirArrowExpandable = '▷'
-    " " let NERDTreeDirArrowCollapsible = '▼'
-    " let g:NERDTreeIndicatorMapCustom = {
-    " \ "Modified"  : "✹",
-    " \ "Staged"    : "✚",
-    " \ "Untracked" : "✭",
-    " \ "Renamed"   : "➜",
-    " \ "Unmerged"  : "═",
-    " \ "Deleted"   : "✖",
-    " \ "Dirty"     : "✗",
-    " \ "Clean"     : "✔︎",
-    " \ 'Ignored'   : '☒',
-    " \ "Unknown"   : "?"
-    " \ }
-    
-    function! ExplorerToggle()
-            :CocCommand explorer
-    endfunction
+  " let NERDTreeShowHidden=1
+  " " let NERDTreeDirArrowExpandable = '▷'
+  " " let NERDTreeDirArrowCollapsible = '▼'
+  " let g:NERDTreeIndicatorMapCustom = {
+  " \ "Modified"  : "✹",
+  " \ "Staged"    : "✚",
+  " \ "Untracked" : "✭",
+  " \ "Renamed"   : "➜",
+  " \ "Unmerged"  : "═",
+  " \ "Deleted"   : "✖",
+  " \ "Dirty"     : "✗",
+  " \ "Clean"     : "✔︎",
+  " \ 'Ignored'   : '☒',
+  " \ "Unknown"   : "?"
+  " \ }
+  
+  function! ExplorerToggle()
+          :CocCommand explorer
+  endfunction
 
-    function! StartUp()
-        if 0 == argc()
-            " NERDTreeToggle
-            :CocCommand explorer
-        end
-    endfunction
+  function! StartUp()
+      if 0 == argc()
+          " NERDTreeToggle
+          :CocCommand explorer
+      end
+  endfunction
 
-    autocmd VimEnter * call StartUp()
+  autocmd VimEnter * call StartUp()
 
-    " CocExplorer
-    let g:coc_explorer_global_presets = {
-    \   '.vim': {
-    \     'root-uri': '~/.vim',
-    \   },
-    \   'tab': {
-    \     'position': 'tab',
-    \     'quit-on-open': v:true,
-    \   },
-    \   'floating': {
-    \     'position': 'floating',
-    \     'open-action-strategy': 'sourceWindow',
-    \   },
-    \   'floatingTop': {
-    \     'position': 'floating',
-    \     'floating-position': 'center-top',
-    \     'open-action-strategy': 'sourceWindow',
-    \   },
-    \   'floatingLeftside': {
-    \     'position': 'floating',
-    \     'floating-position': 'left-center',
-    \     'floating-width': 50,
-    \     'open-action-strategy': 'sourceWindow',
-    \   },
-    \   'floatingRightside': {
-    \     'position': 'floating',
-    \     'floating-position': 'right-center',
-    \     'floating-width': 50,
-    \     'open-action-strategy': 'sourceWindow',
-    \   },
-    \   'simplify': {
-    \     'file-child-template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
-    \   }
-    \ }
+  " CocExplorer
+  let g:coc_explorer_global_presets = {
+  \   '.vim': {
+  \     'root-uri': '~/.vim',
+  \   },
+  \   'tab': {
+  \     'position': 'tab',
+  \     'quit-on-open': v:true,
+  \   },
+  \   'floating': {
+  \     'position': 'floating',
+  \     'open-action-strategy': 'sourceWindow',
+  \   },
+  \   'floatingTop': {
+  \     'position': 'floating',
+  \     'floating-position': 'center-top',
+  \     'open-action-strategy': 'sourceWindow',
+  \   },
+  \   'floatingLeftside': {
+  \     'position': 'floating',
+  \     'floating-position': 'left-center',
+  \     'floating-width': 50,
+  \     'open-action-strategy': 'sourceWindow',
+  \   },
+  \   'floatingRightside': {
+  \     'position': 'floating',
+  \     'floating-position': 'right-center',
+  \     'floating-width': 50,
+  \     'open-action-strategy': 'sourceWindow',
+  \   },
+  \   'simplify': {
+  \     'file-child-template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
+  \   }
+  \ }
 
-    :nmap <space>n :CocCommand explorer<CR>
-    :nmap <space>y :CocCommand explorer --preset floating<CR>
+  :nmap <space>n :CocCommand explorer<CR>
+  :nmap <space>y :CocCommand explorer --preset floating<CR>
 
-    Plug 'ryanoasis/vim-devicons'
+  Plug 'ryanoasis/vim-devicons'
 " }}}
 
 " FZF {{{
-    Plug '/usr/local/opt/fzf'
-    Plug 'junegunn/fzf.vim'
-    let g:fzf_layout = { 'down': '~25%' }
+  Plug '/usr/local/opt/fzf'
+  Plug 'junegunn/fzf.vim'
+  let g:fzf_layout = { 'down': '~25%' }
 
-    " if isdirectory(".git")
-        " if in a git project, use :GFiles
-        nmap <silent> <leader>p :GitFiles --cached --others --exclude-standard<cr>
-    " else
-        " otherwise, use :FZF
-        " nmap <silent> <leader>p :FZF<cr>
-    " endif
+  " if isdirectory(".git")
+      " if in a git project, use :GFiles
+      nmap <silent> <leader>p :GitFiles --cached --others --exclude-standard<cr>
+  " else
+      " otherwise, use :FZF
+      " nmap <silent> <leader>p :FZF<cr>
+  " endif
 
-    nmap <silent> <leader>gf :GFiles?<cr>
+  nmap <silent> <leader>gf :GFiles?<cr>
 
-    nmap <silent> <leader>e :FZF<cr>
-    nmap <leader><tab> <plug>(fzf-maps-n)
-    xmap <leader><tab> <plug>(fzf-maps-x)
-    omap <leader><tab> <plug>(fzf-maps-o)
+  nmap <silent> <leader>e :FZF<cr>
+  nmap <leader><tab> <plug>(fzf-maps-n)
+  xmap <leader><tab> <plug>(fzf-maps-x)
+  omap <leader><tab> <plug>(fzf-maps-o)
 
-    " Insert mode completion
-    imap <c-x><c-k> <plug>(fzf-complete-word)
-    imap <c-x><c-f> <plug>(fzf-complete-path)
-    imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-    imap <c-x><c-l> <plug>(fzf-complete-line)
+  " Insert mode completion
+  imap <c-x><c-k> <plug>(fzf-complete-word)
+  imap <c-x><c-f> <plug>(fzf-complete-path)
+  imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+  imap <c-x><c-l> <plug>(fzf-complete-line)
 
-    nnoremap <silent> <Leader>C :call fzf#run({
-    \   'source':
-    \     map(split(globpath(&rtp, "colors/*.vim"), "\n"),
-    \         "substitute(fnamemodify(v:val, ':t'), '\\..\\{-}$', '', '')"),
-    \   'sink':    'colo',
-    \   'options': '+m',
-    \   'left':    30
-    \ })<CR>
+  nnoremap <silent> <Leader>C :call fzf#run({
+  \   'source':
+  \     map(split(globpath(&rtp, "colors/*.vim"), "\n"),
+  \         "substitute(fnamemodify(v:val, ':t'), '\\..\\{-}$', '', '')"),
+  \   'sink':    'colo',
+  \   'options': '+m',
+  \   'left':    30
+  \ })<CR>
 
-    command! FZFMru call fzf#run({
-    \  'source':  v:oldfiles,
-    \  'sink':    'e',
-    \  'options': '-m -x +s',
-    \  'down':    '40%'})
+  command! FZFMru call fzf#run({
+  \  'source':  v:oldfiles,
+  \  'sink':    'e',
+  \  'options': '-m -x +s',
+  \  'down':    '40%'})
 
-    command! -bang -nargs=* Find call fzf#vim#grep(
-        \ 'rg --column --line-number --no-heading --follow --color=always'.<q-args>, 1,
-        \ <bang>0 ? fzf#vim#with_preview('up:60%') : fzf#vim#with_preview('right:50%:hidden', '?'), <bang>0)
+  command! -bang -nargs=* Find call fzf#vim#grep(
+      \ 'rg --column --line-number --no-heading --follow --color=always'.<q-args>, 1,
+      \ <bang>0 ? fzf#vim#with_preview('up:60%') : fzf#vim#with_preview('right:50%:hidden', '?'), <bang>0)
 
-    command! -bang -nargs=? -complete=dir Files
-        \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right:50%', '?'), <bang>0)
+  command! -bang -nargs=? -complete=dir Files
+      \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right:50%', '?'), <bang>0)
 
-    command! -bang -nargs=? -complete=dir GitFiles
-        \ call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview('right:50%', '?'), <bang>0)
+  command! -bang -nargs=? -complete=dir GitFiles
+      \ call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview('right:50%', '?'), <bang>0)
 " }}}
 
 " vim-fugitive {{{
-    Plug 'tpope/vim-fugitive'
-    nmap <silent> <leader>gs :Gstatus<cr>
+  Plug 'tpope/vim-fugitive'
+  " nmap <silent> <leader>gs :Gstatus<cr>
+    nmap <silent> <leader>gs :Git<cr>
     nmap <leader>ge :Gedit<cr>
     nmap <silent><leader>gr :Gread<cr>
-    nmap <silent><leader>gb :Gblame<cr>
+    " nmap <silent><leader>gb :Gblame<cr>
+    nmap <silent><leader>gb :Git blame<cr>
 
     Plug 'tpope/vim-rhubarb' " hub extension for fugitive
     Plug 'junegunn/gv.vim'
@@ -841,10 +844,10 @@ let g:ctrlp_mruf_relative = 1
         " colorscheme onedark
 
         " let ayucolor="light"  " for light version of theme
-        let ayucolor="mirage" " for mirage version of theme
-        " let ayucolor="dark"   " for dark version of theme
+        " let ayucolor="mirage" " for mirage version of theme
+        let ayucolor="dark"   " for dark version of theme
         colorscheme ayu
-
+	    " colorscheme dracula
         " set background=dark
         " set background=light
         " colorscheme PaperColor
