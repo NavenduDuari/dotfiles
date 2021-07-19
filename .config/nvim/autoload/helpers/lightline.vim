@@ -32,6 +32,7 @@ function! helpers#lightline#currentFunction()
     return get(b:, 'coc_current_function', '')
 endfunction
 
-function! helpers#lightline#gitBlame()
-    return winwidth(0) > 100 ? strpart(get(b:, 'coc_git_blame', ''), 0, 20) : ''
+function! helpers#lightline#gitBlame() abort
+    " return winwidth(0) > 100 ? strpart(get(b:, 'coc_git_blame', ''), 0, 20) : ''
+    return strpart(get(b:, 'coc_git_blame', ''), 0, 20)
 endfunction

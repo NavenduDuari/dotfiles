@@ -228,9 +228,6 @@ map <leader>eg :e! ~/.gitconfig<cr>
 " clear highlighted search
 noremap <leader>c :set hlsearch! hlsearch?<cr>
 
-" vim maximizer
-nmap <leader>m :MaximizerToggle<cr>
-
 Plug 'dyng/ctrlsf.vim'
 
 Plug 'vimwiki/vimwiki'
@@ -462,7 +459,13 @@ nmap <leader>st :Startify<cr>
 Plug 'moll/vim-bbye'
 nmap <leader>d :Bdelete<cr>
 
-" Writing in vim {{{{
+
+" nav::imp
+" vim maximizer
+nmap <leader>m :MaximizerToggle<cr>
+
+" nav::imp
+" Distraction-free writing in vim {{{{
   Plug 'junegunn/goyo.vim'
 
   let g:goyo_height = '100%'
@@ -604,6 +607,8 @@ Plug 'sickill/vim-pasta'
   imap <c-x><c-j> <plug>(fzf-complete-file-ag)
   imap <c-x><c-l> <plug>(fzf-complete-line)
 
+
+  " nav::imp
   nnoremap <silent> <Leader>C :call fzf#run({
   \   'source':
   \     map(split(globpath(&rtp, "colors/*.vim"), "\n"),
@@ -632,6 +637,7 @@ Plug 'sickill/vim-pasta'
 
 " vim-fugitive {{{
   Plug 'tpope/vim-fugitive'
+  " nav::imp
   " nmap <silent> <leader>gs :Gstatus<cr>
     nmap <silent> <leader>gs :Git<cr>
     nmap <leader>ge :Gedit<cr>
@@ -675,6 +681,7 @@ Plug 'sickill/vim-pasta'
     command! -nargs=0 Prettier :CocCommand prettier.formatFile
     nmap <leader>ff :CocCommand prettier.formatFile<cr>
 
+    " nav::imp
     " coc-git
     nmap [g <Plug>(coc-git-prevchunk)
     nmap ]g <Plug>(coc-git-nextchunk)

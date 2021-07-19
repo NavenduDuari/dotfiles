@@ -1,0 +1,15 @@
+Switch between current and last buffer => <leader>.
+Floaterm => <Leader>t
+Coc Diagnostics => <leader>;
+Toggle cursor line => <leader>i
+Jump to the beginning of the line of the bookmark a => 'a
+Delete a buffer => <leader>d
+Maximize a buffer => <leader>m
+Distraction-free writing => <leader>z
+Change colorscheme using fzf => <Leader>C
+Git files => <leader>p
+Git status => <leader>gs
+Git blame => <leader>gb
+Most Recently Used files => <Leader>b
+Explore Files => <Leader>f
+Explore Buffers => <Leader>o
