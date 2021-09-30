@@ -113,6 +113,7 @@ set listchars=tab:│\
 let g:indentLine_setColors=1
 let g:indentLine_char_list=['│', '│', '│', '│']
 
+set background=dark
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 " switch cursor to line when in insert mode, and block when not
 set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
@@ -148,6 +149,7 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'lifepillar/vim-gruvbox8'
 Plug 'cormacrelf/vim-colors-github'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'tomasiser/vim-code-dark'
 
 Plug 'Yggdroot/indentLine'
 
@@ -361,6 +363,7 @@ Plug 'tpope/vim-unimpaired'
 " endings for html, xml, etc. - ehances surround
 Plug 'tpope/vim-ragtag'
 
+" nav::imp
 " mappings to easily delete, change and add such surroundings in pairs, such as quotes, parens, etc.
 Plug 'tpope/vim-surround'
 
@@ -849,23 +852,20 @@ let g:ctrlp_mruf_relative = 1
         "let g:onedark_termcolors=32
         " let g:onedark_terminal_italics=1
         " colorscheme onedark
-
         " let ayucolor="light"  " for light version of theme
-        " let ayucolor="mirage" " for mirage version of theme
-        let ayucolor="dark"   " for dark version of theme
+        let ayucolor="mirage" " for mirage version of theme
+        " let ayucolor="dark"   " for dark version of theme
         colorscheme ayu
-	    " colorscheme dracula
+	" colorscheme dracula
         " set background=dark
         " set background=light
         " colorscheme PaperColor
         " colorscheme solarized8 
-
-        " colorscheme nord
-        
+        " colorscheme nord 
         " colorscheme night-owl 
         " colorscheme gruvbox8
         " colorscheme github
-        " set background=light
+	" colorscheme codedark
 
     endif
     syntax on
