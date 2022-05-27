@@ -9,7 +9,7 @@
   "filterLinkHints": false,
   "waitForEnterForFilteredHints": true,
   "hideHud": false,
-  "keyMappings": "# Insert your preferred key mappings here.\nmap <c-d> scrollPageDown\nmap <c-u> scrollPageUp\nmap <c-a>c createTab\nmap <c-a>p previousTab\nmap <c-a>n nextTab\nmap <c-d> removeTab\nunmap p\nunmap P\nmap <space>p Vomnibar.activate\nunmap o\nunmap O",
+  "keyMappings": "# Insert your preferred key mappings here.\nmap <c-d> scrollPageDown\nmap <c-u> scrollPageUp\nmap <c-a>c createTab\nmap <c-a>p previousTab\nmap <c-a>n nextTab\nmap <c-d> removeTab\nunmap p\nunmap P\nmap <space>p Vomnibar.activate\nunmap o\nunmap O\nmap <c-o> goBack\nmap <c-i> goForward\nmap <space>. visitPreviousTab",
   "linkHintCharacters": "sadfjklewcmpgh",
   "linkHintNumbers": "0123456789",
   "newTabUrl": "about:newtab",
